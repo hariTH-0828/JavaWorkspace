@@ -10,7 +10,7 @@ public class Xpattern {
 				if(i == j || j == (data.length()-1) - i) {
 					System.out.print(data.charAt(j));
 				}
-				System.out.print(" ");
+				else System.out.print(" ");
 			}
 			System.out.println();
 		}

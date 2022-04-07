@@ -1,28 +1,30 @@
 package workspace;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class Duplicate_in_Array {
 	
-	private static ArrayList<Integer> popDuplicate(int[] array) {
-		Set<Integer> setArray = new LinkedHashSet<Integer>();
-		ArrayList<Integer> arrLst = new ArrayList<Integer>();
-		for(int i = 0; i < array.length; i++) {
-			if(setArray.contains(array[i]) && !arrLst.contains(array[i])) {
-				arrLst.add(array[i]);
+	private static ArrayList<Integer> popDuplicate(int[] arr, int n) {
+		Arrays.sort(arr);
+		Set<Integer> setArr = new LinkedHashSet<Integer>();
+		for(int i = 0; i < n-1; i++) {
+			/*
+			 * if(setArr.contains(array[i]) && !arrLst.contains(array[i])) {
+			 * arrLst.add(array[i]); } else setArr.add(array[i]);
+			 */
+			if(arr[i] == arr[i+1]) {
+				setArr.add(arr[i]);
 			}
-			else setArray.add(array[i]);
 		}
-		Collections.sort(arrLst);
-		if(arrLst.isEmpty()) {
-			arrLst.add(-1);
+		if(setArr.isEmpty()) {
+			setArr.add(-1);
+		}
+		ArrayList<Integer> arrLst = new ArrayList<Integer>(setArr);
 			return arrLst;
-		}
-		else return arrLst;
 	}
 
 	public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class Duplicate_in_Array {
 		String input = scan.nextLine();
 		String[] numbers = EasyArray.Splitter(input);
 		int [] numArray = EasyArray.StrToInt(numbers);
-		System.out.println(popDuplicate(numArray));
+		System.out.println(popDuplicate(numArray,numArray.length));
 		scan.close();
 
 	}

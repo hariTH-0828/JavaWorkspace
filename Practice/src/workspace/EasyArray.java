@@ -1,16 +1,17 @@
 package workspace;
 
-public class EasyArray {
-	
-	/*
-	 * static String[] Splitter(String Data) { String strArray[] = Data.split(" ");
-	 * return strArray; }
-	 * 
-	 * static int[] StrToInt(String[] Data) { int[] numArray = new int[Data.length];
-	 * for(int i = 0; i < Data.length; i++) { numArray[i] =
-	 * Integer.parseInt(Data[i]); } return numArray; }
-	 */
+import java.util.Scanner;
 
+public class EasyArray {
+
+	static int[] getValue() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the Data :");
+		String getData = scan.nextLine();
+		scan.close();
+		return StrToInt(getData);
+	}
+	
 	static int[] StrToInt(String Data) {
 		String strArray[] = Data.split(" ");
 		int[] numArray = new int[strArray.length];

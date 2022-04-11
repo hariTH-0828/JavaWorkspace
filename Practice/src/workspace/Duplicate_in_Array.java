@@ -31,8 +31,7 @@ public class Duplicate_in_Array {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the Array elements:");
 		String input = scan.nextLine();
-		String[] numbers = EasyArray.Splitter(input);
-		int [] numArray = EasyArray.StrToInt(numbers);
+		int [] numArray = EasyArray.StrToInt(input);
 		System.out.println(popDuplicate(numArray,numArray.length));
 		scan.close();
 

@@ -8,7 +8,6 @@ public class EasyArray {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the Data :");
 		String getData = scan.nextLine();
-		scan.close();
 		return StrToInt(getData);
 	}
 	
@@ -19,5 +18,15 @@ public class EasyArray {
 			numArray[i] = Integer.parseInt(strArray[i]);
 		}
 		return numArray;
+	}
+	
+	static int[] arraySlice(int[] array, int start, int end) {
+		int[] arr = new int[array.length];
+		//int j = 0;
+		for(int i = start; i < end; i++) {
+			arr[i] = array[i];
+		//	j++;
+		}
+		return arr;
 	}
 }

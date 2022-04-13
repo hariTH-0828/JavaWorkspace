@@ -20,10 +20,9 @@ public class Sorting {
 		return arrData;
 	}
 	
-	/*
-	 * public static void main(String[] args) {
-	 * 
-	 * System.out.println(sortSelection(EasyArray.getValue())); }
-	 */
+	public static void main(String[] args) {
+		
+		System.out.println(sortSelection(EasyArray.getValue()));
+	}
 
 }

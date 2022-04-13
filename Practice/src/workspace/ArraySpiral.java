@@ -1,33 +1,37 @@
 package workspace;
 
-import java.util.Scanner;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ArraySpiral {
-
-	public static void arrayRotation(int[][] arrayData,int sizeOfArray) {
-		int j = 0, i = 0, z=0;
-		int[] arr = new int[sizeOfArray*sizeOfArray];
-		for(i = 0; i < arrayData.length;) {
-			for(j = 0; j < arrayData.length;) {
-				arr[z] = arrayData[i][j];
-				j++;
-				z++;
-			}
-		}
-	}
 	
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the size of Array :");
-		int sizeOfArray = scan.nextInt();
-		int[][] arrayValue = new int[sizeOfArray][sizeOfArray];
-		for(int i = 0; i < sizeOfArray; i++) {
-			for(int j = 0; j < sizeOfArray; j++) {
-				arrayValue[i][j] = scan.nextInt();
+		int[] getData = EasyArray.getValue();
+
+		//Sorting:
+		for(int i = 0; i < getData.length; i++) {
+			for(int j = 0; j < getData.length; j++ ) {
+				if(getData[i] < getData[j]) {
+					int temp = getData[i];
+					getData[i] = getData[j];
+					getData[j] = temp;
+				}
 			}
 		}
-		arrayRotation(arrayValue,sizeOfArray);
-		//System.out.println(Arrays.deepToString(arrayValue));
-		scan.close();
+		
+		//Remove duplicate element in Array:
+		Set<Integer> setData = new LinkedHashSet<Integer>();
+		for(int i =0; i < getData.length; i++) {
+			setData.add(getData[i]);
+		}
+		
+		//Set to Array
+		Integer B[] = new Integer[setData.size()];
+		setData.toArray(B);
+		
+		//Result
+		System.out.println(B[1]);
+		
+	
 	}
 }

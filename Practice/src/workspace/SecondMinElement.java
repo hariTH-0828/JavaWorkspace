@@ -28,7 +28,6 @@ public class SecondMinElement {
 		}
 		System.out.println("In Method 1 : The Second Minimum value is: "+smin);
 		
-		
 	//Method 2 : Sorting Method
 		
 		//Sorting:

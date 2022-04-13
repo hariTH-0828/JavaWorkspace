@@ -21,12 +21,16 @@ public class EasyArray {
 	}
 	
 	static int[] arraySlice(int[] array, int start, int end) {
-		int[] arr = new int[array.length];
-		//int j = 0;
+		int[] arr = new int[end - start];
+		int j = 0;
 		for(int i = start; i < end; i++) {
-			arr[i] = array[i];
-		//	j++;
+			arr[j] = array[i];
+			j++;
 		}
 		return arr;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(1/2);
 	}
 }

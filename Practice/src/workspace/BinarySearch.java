@@ -1,41 +1,35 @@
 package workspace;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinarySearch {
-	private static int binarySearch(int[] arrData,int num) {
-		int mid = arrData.length / 2;
-		int fPos,lPos;
+	
+	private static int binarySearch(int[] arrData,int num,int fPos, int lPos) {
+		int mid = fPos + (lPos - fPos) / 2 ;
+			
 		if(arrData[mid] == num) {
-			return mid; 
+			return mid;
 		}
 		else if(arrData[mid] > num) {
-			fPos = 0;
-			lPos = mid;
-			arrData = EasyArray.arraySlice(arrData, fPos, lPos);
-			binarySearch(arrData, num);
+			return binarySearch(arrData, num, fPos, mid);
 		}
 		else {
-			fPos = mid;
-			lPos = arrData.length;
-			arrData = EasyArray.arraySlice(arrData, fPos, lPos);
-			binarySearch(arrData, num);
+			return binarySearch(arrData, num, mid, lPos);
 		}
-		return 0;
+
 	}
+	
 	public static void main(String[] args) {
 		// Get data's from the User:
 		Scanner scan = new Scanner(System.in);
 		int[] getData = EasyArray.getValue();
-		
-		
-		//getData = Sorting.sortSelection(getData); // --> Sorting method().
 		System.out.println("Enter the number to find :");
 		int findNum = scan.nextInt();
-		scan.close();
+
+		scan.close();  // Scanner Stream close.
 		
-		System.out.println(binarySearch(getData, findNum));
+		System.out.println("The Element of "+findNum+" is in "+binarySearch(getData, findNum, 0, getData.length)+" Indices");
+		
 	}
 
 }

@@ -20,7 +20,7 @@ public class SecondMinElement {
 				smin = input[i];
 			}
 		}
-		System.out.println(smin);
+		System.out.println("The Second Minimum value is: "+smin);
 		
 	}
 }

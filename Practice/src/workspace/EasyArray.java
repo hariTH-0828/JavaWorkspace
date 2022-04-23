@@ -8,6 +8,7 @@ public class EasyArray {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the Data :");
 		String getData = scan.nextLine();
+		scan.close();
 		return StrToInt(getData);
 	}
 	

@@ -18,7 +18,7 @@ public class ArrToHeap {
 	}
 	
 	public static void main(String[] args) {
-		int[] arr = {14,9,7,6,5,8,3,12,11,0,20};
+		int[] arr = {5,12,3,17,11,1,9,0,15,19};
 		int child, node;
 		for(int i = 0; i < arr.length; i++) {
 			if(arr[pos(arr, i)] < arr[i]) { 

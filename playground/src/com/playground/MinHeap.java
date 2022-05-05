@@ -13,7 +13,11 @@ public class MinHeap {
 	
 	public static void main(String[] args) {
 		int[] Heap = {14, 12, 8, 11, 5, 7, 3, 6, 9};
-		System.out.println(Arrays.toString(Heap));
+		for(int i = 0; i < Heap.length / 2; i++) {
+			System.out.println("Left Child of i :"+Heap[i]+" is "+Heap[leftChild(i)]);
+			System.out.println("Right Child of i :"+Heap[i]+" is "+Heap[rightChild(i)]);
+			System.out.println();
+		}
 	}
 
 }
